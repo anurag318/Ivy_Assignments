@@ -104,6 +104,9 @@ summarise(group_by(df,month), mean_wind= mean(wind), mean_rain = mean(rain),coun
 summarise(group_by(df,month),count = n())
 
 # Question 9
-unique(df[,c("month","day")])
+count(unique(df[,c("month","day")]))
 count(df,"month")
-summarise(group_by(df,month,day),count = n())
+sum_df <- summarise(group_by(df,month,day),count = n())
+
+
+
